@@ -7,7 +7,13 @@ export const cart = writable([]);
 export const search = writable('');
 
 export const getCartItems = async () => {
-  let cartId = JSON.parse(localStorage.getItem('cartId'));
+  let cartId = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : null;
+  try {
+    cartId = JSON.parse(localStorage.getItem('cartId'));
+  } catch (e) {
+    console.error('Error parsing cartId from localStorage', e);
+    cartId = null;
+  }
 
   try {
     const shopifyResponse = await loadCart(cartId);
