@@ -19,3 +19,5 @@ This template includes read-only Shopify credentials by default, but you can add
 - `pnpm dev`: Start development server
 - `pnpm build`: Create a production build of the app
 - `pnpm preview`: Preview the production build
+
+<!-- test -->
